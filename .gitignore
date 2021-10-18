@@ -1,0 +1,5 @@
+.idea
+*.pyc
+.env
+.env.db
+db.sqlite3
