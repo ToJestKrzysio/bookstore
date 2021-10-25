@@ -1,5 +1,5 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView
 
 
-def logout(request):
-    return render(request, "accounts/logout.html")
+class LogoutRedirect(TemplateView):
+    template_name = "accounts/logout.html"
