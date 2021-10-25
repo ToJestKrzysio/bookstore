@@ -12,9 +12,11 @@ def test_homepage_status_code_by_reverse(client, url):
 
 
 def test_homepage_template(get_homepage_response):
-    assert "home/home.html" in [template.name for template in get_homepage_response.templates]
+    assert ("home/home.html"
+            in [template.name for template in get_homepage_response.templates])
 
 
 def test_homepage_template_correct_html(get_homepage_response):
-    assert "Welcome to the worst bookstore ever bitch!" in get_homepage_response.content.decode("UTF-8")
+    assert ("Welcome to the worst bookstore"
+            in get_homepage_response.content.decode("UTF-8"))
 
