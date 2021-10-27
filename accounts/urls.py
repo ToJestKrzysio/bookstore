@@ -6,5 +6,4 @@ app_name = "accounts"
 urlpatterns = [
     path("redirect/", views.LogoutRedirect.as_view(), name='redirect'),
     path("signup/", views.SignupPageView.as_view(), name="signup"),
-    path('', include("django.contrib.auth.urls")),
 ]
