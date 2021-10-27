@@ -33,3 +33,5 @@ def test_about_view_status_code(client, url):
 def test_about_view_template(get_about_view_response):
     assert ("home/about.html" in
             [template.name for template in get_about_view_response.templates])
+    assert ("About" in
+            get_about_view_response.content.decode("UTF-8"))
