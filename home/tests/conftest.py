@@ -1,8 +1,14 @@
-import pytest
+from pytest import fixture
 from django.urls import reverse
 
 
-@pytest.fixture()
+@fixture
 def get_homepage_response(client):
     url = reverse('home:home')
+    return client.get(url)
+
+
+@fixture
+def get_about_view_response(client):
+    url = reverse('home:about')
     return client.get(url)
