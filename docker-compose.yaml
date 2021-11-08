@@ -13,13 +13,18 @@ services:
     restart: "on-failure"
     env_file:
       - ./.env
-
+    environment:
+      - "DJANGO_SECRET_KEY=127ekbdpc-k%2le)*=964)mwsz56&k@%3-8jl_t9#+q3s+)hf^"
+      - "DJANGO_DEBUG=True"
+      - "DATABASE_URL=postgres://postgres:postgres@db:5432/bookstore"
   db:
     image: library/postgres:13-alpine
     volumes:
       - postgres_data:/var/lib/posgresql/data/
     env_file:
       - ./.env.db
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
 
 volumes:
   postgres_data:
